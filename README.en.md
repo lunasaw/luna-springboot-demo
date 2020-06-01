@@ -366,14 +366,5 @@ Copyright (c) 2018 Yangkai.Shen
 | spring-boot-starter-websocket          | Support for WebSocket development.                           |
 | spring-boot-starter-ws                 | Support for Spring Web Services.                             |
 
-### Recommended  Open source
 
-- `JustAuth`：The most comprehensive open source library for third-party logins in history，https://github.com/justauth/JustAuth
-- `Mica`：Spring Boot microservices efficient development toolset，https://github.com/lets-mica/mica
-- `awesome-collector`：https://github.com/P-P-X/awesome-collector
-- `SpringBlade`：Complete micro-service online solution (required for enterprise development)，https://github.com/chillzhuang/SpringBlade
-- `Pig`：The universe's strongest micro-service certification authorized scaffolding (architect necessary)，https://github.com/pigxcloud/pig
 
-### Advertisement
-
-[![JD_CLOUD](assets/jdcloud.jpg)](https://re.jdcloud.com/cps?returnUrl=aHR0cHM6Ly93d3cuamRjbG91ZC5jb20vY24vYWN0aXZpdHkveWVhci1lbmQ_bUlkPTE4JmNwc0tleT1iMjg2Y2Q0ZmExMWM0ODZhODU2NmUwNjc5MGQ0MzY4MA==)
