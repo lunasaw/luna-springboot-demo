@@ -1,5 +1,6 @@
 package com.xkcoding.logback;
 
+import lombok.extern.log4j.Log4j;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,9 +22,10 @@ import org.springframework.context.ConfigurableApplicationContext;
  * @modified: yangkai.shen
  */
 @SpringBootApplication
+@Slf4j
 public class SpringBootDemoLogbackApplication {
 
-    private static final Logger log = LoggerFactory.getLogger(SpringBootDemoLogbackApplication.class);
+//    private static final Logger log = LoggerFactory.getLogger(SpringBootDemoLogbackApplication.class);
 
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context = SpringApplication.run(SpringBootDemoLogbackApplication.class, args);

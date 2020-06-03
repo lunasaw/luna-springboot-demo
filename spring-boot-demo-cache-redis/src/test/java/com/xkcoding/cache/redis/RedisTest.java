@@ -1,5 +1,7 @@
 package com.xkcoding.cache.redis;
 
+import cn.hutool.json.JSON;
+import cn.hutool.json.JSONUtil;
 import com.xkcoding.cache.redis.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
@@ -28,12 +30,26 @@ import java.util.stream.IntStream;
 @Slf4j
 public class RedisTest extends SpringBootDemoCacheRedisApplicationTests {
 
+    // 默认模板
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
 
+    // 自定义模板
     @Autowired
     private RedisTemplate<String, Serializable> redisCacheTemplate;
 
+    @Autowired
+    private RedisTemplate<String, Object> redisTemplate;
+
+
+    @Test
+    public void aTest() {
+
+        redisTemplate.opsForValue().set("k2", JSONUtil.toJsonStr(new User(2L,"李四")));
+
+        Object k2 = redisTemplate.opsForValue().get("k2");
+        System.out.println(k2);
+    }
     /**
      * 测试 Redis 操作
      */
