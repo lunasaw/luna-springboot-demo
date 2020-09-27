@@ -77,6 +77,86 @@ public class ElasticsearchProperties {
      */
     private Account account = new Account();
 
+    public String getSchema() {
+        return schema;
+    }
+
+    public void setSchema(String schema) {
+        this.schema = schema;
+    }
+
+    public String getClusterName() {
+        return clusterName;
+    }
+
+    public void setClusterName(String clusterName) {
+        this.clusterName = clusterName;
+    }
+
+    public List<String> getClusterNodes() {
+        return clusterNodes;
+    }
+
+    public void setClusterNodes(List<String> clusterNodes) {
+        this.clusterNodes = clusterNodes;
+    }
+
+    public Integer getConnectTimeout() {
+        return connectTimeout;
+    }
+
+    public void setConnectTimeout(Integer connectTimeout) {
+        this.connectTimeout = connectTimeout;
+    }
+
+    public Integer getSocketTimeout() {
+        return socketTimeout;
+    }
+
+    public void setSocketTimeout(Integer socketTimeout) {
+        this.socketTimeout = socketTimeout;
+    }
+
+    public Integer getConnectionRequestTimeout() {
+        return connectionRequestTimeout;
+    }
+
+    public void setConnectionRequestTimeout(Integer connectionRequestTimeout) {
+        this.connectionRequestTimeout = connectionRequestTimeout;
+    }
+
+    public Integer getMaxConnectPerRoute() {
+        return maxConnectPerRoute;
+    }
+
+    public void setMaxConnectPerRoute(Integer maxConnectPerRoute) {
+        this.maxConnectPerRoute = maxConnectPerRoute;
+    }
+
+    public Integer getMaxConnectTotal() {
+        return maxConnectTotal;
+    }
+
+    public void setMaxConnectTotal(Integer maxConnectTotal) {
+        this.maxConnectTotal = maxConnectTotal;
+    }
+
+    public Index getIndex() {
+        return index;
+    }
+
+    public void setIndex(Index index) {
+        this.index = index;
+    }
+
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
+    }
+
     /**
      * 索引配置信息
      */
@@ -93,6 +173,21 @@ public class ElasticsearchProperties {
          */
         private Integer numberOfReplicas = 2;
 
+        public Integer getNumberOfShards() {
+            return numberOfShards;
+        }
+
+        public void setNumberOfShards(Integer numberOfShards) {
+            this.numberOfShards = numberOfShards;
+        }
+
+        public Integer getNumberOfReplicas() {
+            return numberOfReplicas;
+        }
+
+        public void setNumberOfReplicas(Integer numberOfReplicas) {
+            this.numberOfReplicas = numberOfReplicas;
+        }
     }
 
     /**
@@ -111,6 +206,22 @@ public class ElasticsearchProperties {
          */
         private String password;
 
+
+        public String getUsername() {
+            return username;
+        }
+
+        public void setUsername(String username) {
+            this.username = username;
+        }
+
+        public String getPassword() {
+            return password;
+        }
+
+        public void setPassword(String password) {
+            this.password = password;
+        }
     }
 
 }

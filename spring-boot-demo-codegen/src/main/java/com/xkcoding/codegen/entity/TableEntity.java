@@ -17,7 +17,6 @@ import java.util.List;
  * @version: V1.0
  * @modified: yangkai.shen
  */
-@Data
 public class TableEntity {
     /**
      * 名称
@@ -43,4 +42,52 @@ public class TableEntity {
      * 普通类型
      */
     private String lowerClassName;
+
+    public String getTableName() {
+        return tableName;
+    }
+
+    public void setTableName(String tableName) {
+        this.tableName = tableName;
+    }
+
+    public String getComments() {
+        return comments;
+    }
+
+    public void setComments(String comments) {
+        this.comments = comments;
+    }
+
+    public ColumnEntity getPk() {
+        return pk;
+    }
+
+    public void setPk(ColumnEntity pk) {
+        this.pk = pk;
+    }
+
+    public List<ColumnEntity> getColumns() {
+        return columns;
+    }
+
+    public void setColumns(List<ColumnEntity> columns) {
+        this.columns = columns;
+    }
+
+    public String getCaseClassName() {
+        return caseClassName;
+    }
+
+    public void setCaseClassName(String caseClassName) {
+        this.caseClassName = caseClassName;
+    }
+
+    public String getLowerClassName() {
+        return lowerClassName;
+    }
+
+    public void setLowerClassName(String lowerClassName) {
+        this.lowerClassName = lowerClassName;
+    }
 }

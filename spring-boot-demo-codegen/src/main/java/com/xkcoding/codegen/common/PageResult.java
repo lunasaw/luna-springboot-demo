@@ -18,8 +18,6 @@ import java.util.List;
  * @version: V1.0
  * @modified: yangkai.shen
  */
-@Data
-@AllArgsConstructor
 public class PageResult<T> {
     /**
      * 总条数
@@ -40,4 +38,46 @@ public class PageResult<T> {
      * 结果集
      */
     private List<T> list;
+
+    public PageResult() {
+    }
+
+    public PageResult(Long total, int pageNumber, int pageSize, List<T> list) {
+        this.total = total;
+        this.pageNumber = pageNumber;
+        this.pageSize = pageSize;
+        this.list = list;
+    }
+
+    public Long getTotal() {
+        return total;
+    }
+
+    public void setTotal(Long total) {
+        this.total = total;
+    }
+
+    public int getPageNumber() {
+        return pageNumber;
+    }
+
+    public void setPageNumber(int pageNumber) {
+        this.pageNumber = pageNumber;
+    }
+
+    public int getPageSize() {
+        return pageSize;
+    }
+
+    public void setPageSize(int pageSize) {
+        this.pageSize = pageSize;
+    }
+
+    public List<T> getList() {
+        return list;
+    }
+
+    public void setList(List<T> list) {
+        this.list = list;
+    }
 }

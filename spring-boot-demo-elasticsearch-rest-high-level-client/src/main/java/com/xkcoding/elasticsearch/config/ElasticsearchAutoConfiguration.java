@@ -1,5 +1,7 @@
 package com.xkcoding.elasticsearch.config;
 
+import cn.hutool.json.JSON;
+import cn.hutool.json.JSONUtil;
 import lombok.RequiredArgsConstructor;
 import org.apache.http.HttpHost;
 import org.apache.http.auth.AuthScope;
@@ -75,20 +77,22 @@ public class ElasticsearchAutoConfiguration {
             return requestConfigBuilder;
         });
 
+        // Callback used the basic credential auth
+        final CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
+        ElasticsearchProperties.Account account = elasticsearchProperties.getAccount();
+        if (!StringUtils.isEmpty(account.getUsername()) && !StringUtils.isEmpty(account.getUsername())) {
+            System.out.println(JSONUtil.toJsonStr(account));
+            credentialsProvider.setCredentials(AuthScope.ANY, new UsernamePasswordCredentials(account.getUsername(), account.getPassword()));
+        }
+
         // Callback used to customize the {@link CloseableHttpClient} instance used by a {@link RestClient} instance.
         builder.setHttpClientConfigCallback(httpClientBuilder -> {
             httpClientBuilder.setMaxConnTotal(elasticsearchProperties.getMaxConnectTotal());
             httpClientBuilder.setMaxConnPerRoute(elasticsearchProperties.getMaxConnectPerRoute());
-            return httpClientBuilder;
+            return  httpClientBuilder.setDefaultCredentialsProvider(credentialsProvider);
         });
 
-        // Callback used the basic credential auth
-        ElasticsearchProperties.Account account = elasticsearchProperties.getAccount();
-        if (!StringUtils.isEmpty(account.getUsername()) && !StringUtils.isEmpty(account.getUsername())) {
-            final CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
 
-            credentialsProvider.setCredentials(AuthScope.ANY, new UsernamePasswordCredentials(account.getUsername(), account.getPassword()));
-        }
         return new RestHighLevelClient(builder);
     }
 

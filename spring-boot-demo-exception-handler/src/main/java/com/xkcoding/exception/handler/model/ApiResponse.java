@@ -4,19 +4,7 @@ import com.xkcoding.exception.handler.constant.Status;
 import com.xkcoding.exception.handler.exception.BaseException;
 import lombok.Data;
 
-/**
- * <p>
- * 通用的 API 接口封装
- * </p>
- *
- * @package: com.xkcoding.exception.handler.model
- * @description: 通用的 API 接口封装
- * @author: yangkai.shen
- * @date: Created in 2018/10/2 8:57 PM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
- */
+
 @Data
 public class ApiResponse {
 	/**

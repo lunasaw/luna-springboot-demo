@@ -1,5 +1,9 @@
 spring:
   data:
     elasticsearch:
-      cluster-name: docker-cluster
+      cluster-name: elasticsearch
       cluster-nodes: localhost:9300
+      client:
+        reactive:
+          username: luna
+          password: czy1024

@@ -34,7 +34,7 @@ import javax.sql.DataSource;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
-        // repository包名
+        // repository包名a
         basePackages = PrimaryJpaConfig.REPOSITORY_PACKAGE,
         // 实体管理bean名称
         entityManagerFactoryRef = "primaryEntityManagerFactory",

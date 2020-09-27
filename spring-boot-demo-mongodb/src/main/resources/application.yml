@@ -3,7 +3,8 @@ spring:
     mongodb:
       host: localhost
       port: 27017
-      database: article_db
+      database: luna-demo
+
 logging:
   level:
     org.springframework.data.mongodb.core: debug
